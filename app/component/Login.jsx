@@ -12,6 +12,7 @@ const Login = () => {
     const formdata = new FormData(e.currentTarget);
     try {
       await loginaction(formdata);
+      setError("");
     } catch (error) {
       setError(error.message);
     }
