@@ -16,8 +16,6 @@ const Login = () => {
     } catch (error) {
       setError(error.message);
     }
-
-    console.log(isloging);
   };
 
   return (
