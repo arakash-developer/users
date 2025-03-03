@@ -1,10 +1,12 @@
 "use client";
-
-import { useState } from "react";
+import { Contex } from "@/app/context/Appcontext";
+import { useContext, useState } from "react";
 import loginaction from "../action/loginaction";
 
 const Login = () => {
+  let { isloging, setIsloging } = useContext(Contex);
   let [error, setError] = useState("");
+
   const LoginSubmit = async (e) => {
     e.preventDefault();
     const formdata = new FormData(e.currentTarget);
@@ -14,6 +16,8 @@ const Login = () => {
     } catch (error) {
       setError(error.message);
     }
+
+    console.log(isloging);
   };
 
   return (
@@ -79,11 +83,7 @@ const Login = () => {
             </div>
           </div>
 
-          {error && (
-            <p className="text-sm text-red-600 mt-4">
-              {error}
-            </p>
-          )}
+          {error && <p className="text-sm text-red-600 mt-4">{error}</p>}
 
           <button
             type="submit"
