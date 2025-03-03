@@ -5,6 +5,8 @@ import loginaction from "../action/loginaction";
 
 const Login = () => {
   let { isloging, setIsloging } = useContext(Contex);
+  console.log(isloging);
+  
   let [error, setError] = useState("");
 
   const LoginSubmit = async (e) => {
@@ -17,7 +19,7 @@ const Login = () => {
       setError(error.message);
     }
   };
-
+// jjjjjj
   return (
     <div className="mx-auto max-w-[800px] px-4 py-16 sm:px-6 lg:px-8">
       <div className="bg-white rounded-lg shadow-lg p-8">
