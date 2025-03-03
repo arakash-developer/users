@@ -10,7 +10,6 @@ const Login = () => {
   const LoginSubmit = async (e) => {
     e.preventDefault();
     const formdata = new FormData(e.currentTarget);
-    console.log(formdata);
     try {
       await loginaction(formdata);
     } catch (error) {
